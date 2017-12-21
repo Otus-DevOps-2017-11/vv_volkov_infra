@@ -8,13 +8,13 @@ $ ssh internalhost
 
 Add this
 
-`Host internalhost
+```Host internalhost
 
     User appuser
 
-    Hostname internalhost`
+    Hostname internalhost
 
-    ProxyCommand ssh -Al appuser 35.205.217.189 nc %h %p 2> /dev/null`
+    ProxyCommand ssh -Al appuser 35.205.217.189 nc %h %p 2> /dev/null```
     
 to `~/.ssh/config` file
 
