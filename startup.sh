@@ -1,5 +1,3 @@
-#!bin/bash
-src_dir="$(dirname "$0")"
-source "$src_dir/install_ruby.sh"
-source "$src_dir/install_mongodb.sh"
-source "$src_dir/deploy.sh"
+#!/usr/bin/env bash
+sudo apt update
+sudo apt install -y ruby-full ruby-bundler build-essential
