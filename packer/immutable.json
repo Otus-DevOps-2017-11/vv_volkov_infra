@@ -10,7 +10,7 @@
     "project_id": "{{user `proj_id`}}",
     "image_name": "reddit-base-{{timestamp}}",
     "image_description": "reddit-like application image",
-    "image_family": "reddit-base",
+    "image_family": "reddit-full",
     "disk_size": 10,
     "disk_type": "pd-standard",
     "source_image_family": "{{user `source_image_family`}}",
@@ -18,7 +18,8 @@
     "tags": "http-server,puma-server",
     "zone": "europe-west1-b",
     "ssh_username": "appuser",
-    "machine_type": "{{user `machine_type`}}"
+    "machine_type": "{{user `machine_type`}}",
+    "startup_script_file": "~/deploy.sh"
     }
   ],
   "provisioners": [
@@ -30,6 +31,10 @@
       "type": "shell",
       "script": "scripts/install_mongodb.sh",
       "execute_command": "sudo {{.Path}}"
+    },{
+      "type": "file",
+      "source": "files/deploy.sh",
+      "destination": "~/deploy.sh"
     }
   ]
 }
