@@ -39,3 +39,7 @@ Host internalhost, local IP: 10.132.0.3
 
 `$ gcloud compute firewall-rules create default-puma-server --direction=ingress --network=default --allow=tcp:9292 --priority=1000 --target-tags=puma-server --source-ranges=0.0.0.0/0`
 
+# Homework 7
+
+See folder packer and config-scripts.
+
