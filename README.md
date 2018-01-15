@@ -39,3 +39,13 @@ Host internalhost, local IP: 10.132.0.3
 
 `$ gcloud compute firewall-rules create default-puma-server --direction=ingress --network=default --allow=tcp:9292 --priority=1000 --target-tags=puma-server --source-ranges=0.0.0.0/0`
 
+# Homework 7
+
+1. How to build custom image with packer, using separate file with variables:
+
+`packer build -var-file=variables.json immutable.json`
+
+2. How to run run virtual machine based on custom image "reddit-base":
+
+`gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family reddit-base --machine-type=g1-small --zone europe-west1-b --tags http-server,puma-server --restart-on-failure`
+
