@@ -41,5 +41,7 @@ Host internalhost, local IP: 10.132.0.3
 
 # Homework 7
 
-See folder packer and config-scripts.
+1. How to run run virtual machine based on custom image "reddit-base":
+
+`gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family reddit-base --machine-type=g1-small --zone europe-west1-b --tags http-server,puma-server --restart-on-failure`
 
