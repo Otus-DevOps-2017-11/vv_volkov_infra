@@ -41,7 +41,11 @@ Host internalhost, local IP: 10.132.0.3
 
 # Homework 7
 
-1. How to run run virtual machine based on custom image "reddit-base":
+1. How to build custom image with packer, using separate file with variables:
+
+`packer build -var-file=variables.json -var 'proj_id=infra-N' -var 'source_image_family=ubuntu-1604-lts' immutable.json`
+
+2. How to run run virtual machine based on custom image "reddit-base":
 
 `gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family reddit-base --machine-type=g1-small --zone europe-west1-b --tags http-server,puma-server --restart-on-failure`
 
